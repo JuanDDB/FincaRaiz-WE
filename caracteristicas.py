@@ -7,6 +7,7 @@ from collections import namedtuple
 from links import obtener_enlaces_totales
 
 Oferta = namedtuple("Oferta", [
+    "carac",
     "precio",
     "hab",
     "baños",
@@ -119,8 +120,15 @@ def procesar_enlace(enlace):
                     siguiente_p = p.find_next("p")  
                     if siguiente_p:
                         administración = siguiente_p.get_text()
-                        break              
-
+                        break     
+            carac = None  
+            for p in elementos_p:
+                if p.get_text() == "Descripción general":
+                    siguiente_p = p.find_next("p")  
+                    if siguiente_p:
+                        carac = siguiente_p.get_text()
+                        break    
+                 
             precio_p = soup.select('p[class^="jss65 jss70"]')
             if precio_p:
                 precio = precio_p[1].get_text()
@@ -130,6 +138,7 @@ def procesar_enlace(enlace):
             coordenadas = driver.find_element("css selector", 'img[src*="snap_map"]')
             coord = coordenadas.get_attribute('src')
             lista_ofertas.append(Oferta(
+                carac=carac,
                 precio=precio,
                 hab=hab,
                 baños=baños,
