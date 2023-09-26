@@ -11,3 +11,8 @@ Opcional: El script imagenes.py permitirá extrear las imagenes de las ofertas e
 
 Comenta que se podría mejorar. 
 
+Existe una version .exe
+![image](https://github.com/JuanDDB/FincaRaiz-WE/assets/54457007/5c28a88e-1a88-4a87-a36a-2c0b90fd1349)
+
+En esta podrás ingresar una URL cualquiera de Finca Raiz y se extraerá en un archivo excel, se podrá extraer con o sin imagenes.
+Pesa mas de lo que puedo subir, escribir para solicitarlo.
